@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
       draw();
       displayShape();
       addScore();
+      gameOver();
     }
   }
 
@@ -180,6 +181,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-
-
+  function gameOver() {
+    if (current.some((index) => squares[currentPosition + index].classList.contains('taken'))) {
+      scoreDisplay.innerHTML = 'end';
+      clearInterval(timerId);
+    }
+  }
 });
