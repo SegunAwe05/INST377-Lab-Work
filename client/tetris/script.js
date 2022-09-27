@@ -71,6 +71,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   timerId = setInterval(moveDown, 1000);
 
+  function control(e) {
+    if (e.keyCode === 37) {
+      moveLeft();
+    } else if (e.keyCode === 38) {
+      // rotate()
+    } else if (e.keyCode === 39) {
+      moveRight();
+    } else if (e.keyCode === 40) {
+      moveDown();
+    }
+  }
+
+  document.addEventListener('keyup', control);
+
   function freeze() {
     if (current.some((index) => squares[currentPos + index + width].classList.contains('taken'))) {
       current.forEach((index) => squares[currentPos + index].classList.add('taken'));
@@ -81,5 +95,25 @@ document.addEventListener('DOMContentLoaded', () => {
       currentPos = 4;
       draw();
     }
+  }
+
+  function moveLeft() {
+    undraw();
+    const isAtLeftEdge = current.some((index) => (currentPos + index) % width === 0);
+    if (!isAtLeftEdge) currentPos -= 1;
+    if (current.some((index) => squares[currentPos + index].classList.contains('taken'))) {
+      currentPos += 1;
+    }
+    draw();
+  }
+
+  function moveRight() {
+    undraw();
+    const isAtRightEdge = current.some(index => (currentPos + index) % width === width -1);
+    if (!isAtRightEdge) currentPos += 1;
+    if (current.some(index => squares[currentPos + index].classList.contains('taken'))) {
+        currentPos -= 1
+    }
+    draw()
   }
 });
