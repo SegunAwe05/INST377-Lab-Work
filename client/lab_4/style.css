@@ -77,7 +77,7 @@ form {
   padding-top: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 
@@ -101,7 +101,7 @@ form {
   padding: 1.25rem;
   margin:0; /* removing the margin on h1 tags means the header pins to the top if we move */
 
-
+  border: 2px dashed;
   /* box-shadows are fancy */
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
 }
@@ -147,6 +147,12 @@ form {
   flex-flow: column;
 }
 
+.restaurant_list {
+  background-color: rgba(239, 239, 239, 0.40);;
+  padding: 1.5rem;
+  border: 2px dashed;
+}
+
 /*
   This block is actually dependent on the "container" block having a flex set on it
   and the "wrapper" block displaying as a flex column with a "vertical height" (vh) of 100.
@@ -159,6 +165,7 @@ form {
   background-color: 0D1321;
   font-size: 1.2rem;
   font-weight: 600;
+  border: 2px dashed;
 }
 
 .footer a {
