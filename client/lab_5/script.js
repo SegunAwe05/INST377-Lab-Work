@@ -1,8 +1,3 @@
-/*
-  Hook this script to index.html
-  by adding `<script src="script.js">` just before your closing `</body>` tag
-*/
-
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.main_form'); // This class name needs to be set on your form before you can listen for an event on it
   form.addEventListener('submit', async (submitEvent) => { // async has to be declared on every function that needs to "await" something
@@ -35,17 +30,10 @@ async function mainEvent() { // the async keyword means we can make API requests
       // It does not include any of your form values, though
     */
 
-    // const results = await fetch('/api/foodServicePG');
     const fetchQuery = new URLSearchParams(formProps);
     const results = await fetch(`/api/foodServicePG?${fetchQuery}`);
     /*
    ## Get request with query parameters
-
-      const results = await fetch(`/api/foodServicePG?${new URLSearchParams(formProps)}`);
-
-      The above request uses "string interpolation" to include an encoded version of your form value
-      It works because it has a ? in the string
-      Replace line 37 with it, and try it with a / instead to see what your server console says
 
       You can check what you sent to your server in your GET request
       By opening the "network" tab in your browser developer tools and looking at the "name" column
