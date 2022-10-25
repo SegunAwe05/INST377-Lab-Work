@@ -47,7 +47,7 @@ function injectHTML(list) {
 
 function processRestaurants(list) {
   console.log('fired restaurants list');
-  const range = [...Array(15).keys()]; // special notation to create an array of 15 elements
+  const range = [...Array(15).keys()]; // special notation to create an array of 15 elements  
   const newArray = range.map((item) => {
     const index = getRandomIntInclusive(0, list.length);
     return list[index];
