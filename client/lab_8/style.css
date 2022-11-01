@@ -291,7 +291,15 @@
     background-color: rgb(195, 0, 255);
   }
   
-  
+  /* map style */
+  #map {
+    display: block;
+    width: 400px;
+    height: 300px;
+    border: 2px dashed rgb(99, 99,99);
+    margin-bottom: 1rem;
+  }
+
   /*
   Form Styles
   */
